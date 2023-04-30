@@ -6,6 +6,8 @@ import {
   keyActive,
   syblKeysRusCaps,
   syblKeysEngCaps,
+  syblKeysEngShiftLow,
+  syblKeysRusShiftLow,
 } from './data.js';
 
 const body = document.querySelector('body');
@@ -84,7 +86,7 @@ function createButton(text, data, id) {
   const elem = document.createElement('div');
   const elem2 = document.createElement('span');
   if ((id >= 1 && id <= 12)
-        || (id >= 16 && id <= 27) || (id >= 31 && id <= 41) || (id >= 45 && id <= 54)) {
+    || (id >= 16 && id <= 27) || (id >= 31 && id <= 41) || (id >= 45 && id <= 54)) {
     elem.classList.add('tab-vb-lite');
   } else if (id === 13) {
     elem.classList.add('tab-back');
@@ -166,7 +168,7 @@ function messageOutput(eveent) {
       if (eveent.shiftKey && keyboard.children[16].textContent === 'Q' && !eveent.repeat) {
         const subl = syblKeysEngShift.filter((i) => i[0] === eveent.keyCode);
         screnInput.value = screnInput.value.slice(0, screnInput.selectionStart)
-                    + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
+          + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
         lengthh += 1;
         screnInput.selectionStart = lengthh;
         screnInput.selectionEnd = lengthh;
@@ -174,7 +176,7 @@ function messageOutput(eveent) {
       } else {
         const subl = syblKeysEng.filter((i) => i[0] === eveent.keyCode);
         screnInput.value = screnInput.value.slice(0, screnInput.selectionStart)
-                    + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
+          + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
         lengthh += 1;
         screnInput.selectionStart = lengthh;
         screnInput.selectionEnd = lengthh;
@@ -184,7 +186,7 @@ function messageOutput(eveent) {
       if (eveent.shiftKey && keyboard.children[16].textContent === 'Й' && !eveent.repeat) {
         const subl = syblKeysRusShift.filter((i) => i[0] === eveent.keyCode);
         screnInput.value = screnInput.value.slice(0, screnInput.selectionStart)
-                    + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
+          + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
         lengthh += 1;
         screnInput.selectionStart = lengthh;
         screnInput.selectionEnd = lengthh;
@@ -192,7 +194,7 @@ function messageOutput(eveent) {
       } else {
         const subl = syblKeysRus.filter((i) => i[0] === eveent.keyCode);
         screnInput.value = screnInput.value.slice(0, screnInput.selectionStart)
-                    + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
+          + subl[0][1] + screnInput.value.slice(screnInput.selectionStart);
         lengthh += 1;
         screnInput.selectionStart = lengthh;
         screnInput.selectionEnd = lengthh;
@@ -213,7 +215,7 @@ document.addEventListener('keydown', (event) => {
     } else if (event.altKey && el.dataset.keyk === '18' && event.code === el.dataset.code) {
       el.classList.add('active');
     } else if (+el.dataset.keyk === event.keyCode
-            && !event.shiftKey && !event.ctrlKey && !event.altKey) {
+      && !event.shiftKey && !event.ctrlKey && !event.altKey) {
       el.classList.add('active');
     }
   });
@@ -237,13 +239,13 @@ document.addEventListener('keydown', (event) => {
   if (event.shiftKey && keyboard.children[16].textContent === 'q' && !event.repeat) {
     sortKysFunc(syblKeysEngShift);
   } else if (event.shiftKey && keyboard.children[16].textContent === 'Q' && !event.repeat) {
-    sortKysFunc(syblKeysEng);
+    sortKysFunc(syblKeysEngShiftLow);
   }
 
   if (event.shiftKey && keyboard.children[16].textContent === 'й' && !event.repeat) {
     sortKysFunc(syblKeysRusShift);
   } else if (event.shiftKey && keyboard.children[16].textContent === 'Й' && !event.repeat) {
-    sortKysFunc(syblKeysRus);
+    sortKysFunc(syblKeysRusShiftLow);
   }
 
   if (event.code === 'CapsLock' && keyboard.children[16].textContent === 'й' && !event.repeat) {
@@ -272,12 +274,12 @@ document.addEventListener('keyup', (event) => {
   if (!event.shiftKey && event.code === 'ShiftLeft' && keyboard.children[16].textContent === 'Й' && !event.repeat) {
     sortKysFunc(syblKeysRus);
   } else if (!event.shiftKey && event.code === 'ShiftLeft' && keyboard.children[16].textContent === 'й' && !event.repeat) {
-    sortKysFunc(syblKeysRus);
+    sortKysFunc(syblKeysRusCaps);
   }
   if (!event.shiftKey && event.code === 'ShiftLeft' && keyboard.children[16].textContent === 'Q' && !event.repeat) {
     sortKysFunc(syblKeysEng);
   } else if (!event.shiftKey && event.code === 'ShiftLeft' && keyboard.children[16].textContent === 'q' && !event.repeat) {
-    sortKysFunc(syblKeysEng);
+    sortKysFunc(syblKeysEngCaps);
   }
   event.preventDefault();
 });
