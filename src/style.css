@@ -41,7 +41,6 @@
     background: linear-gradient(0.87turn, #5b5454,#1d1b1b);
 }
 .tab:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 
@@ -71,7 +70,6 @@
     background: #696969;
 }
 .tab-vb:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -103,7 +101,6 @@
     background: linear-gradient(0.87turn, #5b5454,#1d1b1b);
 }
 .dark-btn:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -136,7 +133,6 @@
     background: #696969;
 }
 .tab-vb-lite:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -167,7 +163,6 @@
     background: linear-gradient(0.87turn, #5b5454,#1d1b1b);
 }
 .tab-back:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -196,8 +191,10 @@
     border-radius: 5px;
     background: linear-gradient(0.87turn, #5b5454,#1d1b1b);
 }
+.active-click_caps{
+    color: red !important; 
+}
 .caps-shift:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -227,7 +224,6 @@
     background: linear-gradient(0.87turn, #5b5454,#1d1b1b);
 }
 .enter-shift:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -257,7 +253,6 @@
     background: linear-gradient(0.87turn, #5b5454,#1d1b1b);
 }
 .frame-5:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -288,7 +283,6 @@
     background: linear-gradient(0.87turn, #5b5454,#1d1b1b);
 }
 .space:hover{
-    transform: scale(0.98);
     transition: .1s;
     box-shadow: 0px 0px 5px 0px rgb(224 217 228);
 }
@@ -326,6 +320,10 @@
     color: rgb(0, 0, 0);
 }
 
+.active-click{
+      transform: scale(0.95);
+      transition: .1s;
+}
 
 .title-keyboard{
     text-align: center;
